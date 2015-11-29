@@ -77,7 +77,6 @@ class Poblacion :
 			nueva_poblacion.append(cruzado)
 		self.poblacion = nueva_poblacion
 	def toString(self):
-		print "Poblacion",self.poblacion
 		for i in range(0,self.tamano-1):
 			self.poblacion[i].toString()
 

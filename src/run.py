@@ -26,6 +26,12 @@ while seguir and maxima_generacion > poblacion.generacion :
 	print "###########################"
 	poblacion.newGeneration()
 
-print "Solucion",solucion
+solucion_text = ""
+for i in range(0,len(solucion)) :
+	if solucion[i] == 1 : solucion_text += 'B'
+	else : solucion_text += 'A'
+print "Solucion "
+print "----------"
+print solucion_text
 
 # Pasamos a las siguientes generaciones
