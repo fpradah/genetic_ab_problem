@@ -15,8 +15,11 @@ class Cromosoma :
 		return [randint(0,1) 
 		for b in range(1,self.genes+1)]
 	def getPuntuacion(self):
-		if self.pares == 0 : self.pares = 1
-		return float(self.getPares())/float(self.pares)
+		total_pares = self.getPares() 
+		if self.pares == 0 and total_pares == 0 : return 1
+		if self.pares == 0 and total_pares == 1 : return 0.5
+		if self.pares == 0 : return float(total_pares)/1
+		return float(total_pares)/float(self.pares)
 	def cruzar(self,pareja):
 		# Escogemos el pocentaje de la pareja
 		total_actual = int(self.genes * 0.6)
