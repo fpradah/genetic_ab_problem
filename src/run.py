@@ -25,8 +25,8 @@ while seguir and maxima_generacion > poblacion.generacion:
     poblacion.newGeneration()
 
 solucion_text = ""
-for i in range(0, len(solucion)):
-    if solucion[i] == 1:
+for v in solucion:
+    if v == 1:
         solucion_text += 'B'
     else:
         solucion_text += 'A'
