@@ -1,6 +1,13 @@
 from random import *
 import sys
+import math
 import Poblacion
+
+def existeSolucion(longitud,pares_exigidos):
+    total_soluciones = float((float(longitud)/2)**2)
+    total_soluciones = math.floor(total_soluciones)
+    print "total soluciones",total_soluciones
+    return pares_exigidos <= total_soluciones
 
 genes, pares = int(sys.argv[1]), int(sys.argv[2])
 tamano_poblacion = genes * 5
@@ -9,7 +16,10 @@ solucion = []
 """Creamos la primera generacion"""
 poblacion = Poblacion.Poblacion(tamano_poblacion, genes, 0, pares)
 
-seguir = True
+seguir = False
+if existeSolucion(genes, pares) :
+    seguir = True
+
 while seguir and maxima_generacion > poblacion.generacion:
     """Buscamos si existe solucion en la poblacion actual"""
     print "GENERACION : "
